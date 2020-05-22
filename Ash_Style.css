@@ -1,0 +1,20 @@
+table {
+    background-color: lightgray;
+}
+td{
+    padding: 3px;
+}
+#main{
+    width: 75%;
+}
+#profile{
+    border-collapse: collapse;
+}
+#table_music{
+    border-collapse: collapse;
+}
+#music {
+    width: 80%;
+    border: 2px;
+}
+hr{width: 90%;}
