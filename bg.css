@@ -1,7 +1,16 @@
+.album_single {
+    display: none;
+	overflow: hidden;
+	width: 100%;
+}
+
 #album_main{
     opacity: 0;
     display: none;
 }
 #others{
     display: none;
+}
+.bg_clicked{
+    display: block;
 }

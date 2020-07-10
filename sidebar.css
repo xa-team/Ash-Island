@@ -4,7 +4,7 @@ aside ::-webkit-scrollbar{
 
 .album_main_sidebar{
     overflow: scroll;
-    width: 220px;
+    width: 250px;
     margin-left: 20px;
     position: fixed;
     display: none;
@@ -17,7 +17,7 @@ aside ::-webkit-scrollbar{
 
 .album_single_sidebar{
     overflow: scroll;
-    width: 220px;
+    width: 250px;
     margin-left: 20px;
     position: fixed;
     display: none;
