@@ -1,0 +1,11 @@
+.album_main_sidebar{
+    overflow: scroll;
+    width: 20%;
+    margin-left: 20px;
+    position: fixed;
+    /* display: none; */
+    top: 10%;
+}
+#ams{
+    display: none;
+}

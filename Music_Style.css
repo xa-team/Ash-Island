@@ -1,0 +1,28 @@
+table {
+    background-color: lightgray;
+}
+td{
+    padding: 3px;
+}
+#table_music{
+    border-collapse: collapse;
+}
+#music {
+    width: 80%;
+    border: 2px;
+}
+#side_left{
+    background-color: #C1AEEE;
+    width: 25%;
+    float: left;
+    opacity: 40%;
+}
+#main{
+    text-align: center;
+}
+#side_right{
+    background-color: #B7A4EE;
+    width: 25%;
+    float: right;
+    opacity: 40%;
+}
