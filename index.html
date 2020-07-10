@@ -264,8 +264,6 @@
                 Changebg(99);
             }
             else if (objDiv.id == obj3.id) {
-                var objthis = document.querySelector("#album_single_1");
-                objthis.classList.add("bg_clicked");
                 obj1.style.display = "none";
                 obj1_1.style.display = "none";
                 obj2.style.display = "none";
@@ -302,8 +300,14 @@
                 return;
             }
             else if(a == 98){
-                var others = document.querySelector("#album_single_1");
-                others.classList.add(BG_CLICKED_CLASS);
+                for(var i = 1; i < 7; i++){
+                    const fontc = document.querySelector("#SINGLE_" + i);
+                    if(fontc.classList.contains(CLICKED_CLASS)){
+                        var others = document.querySelector("#album_single_" + i);
+                        others.classList.add(BG_CLICKED_CLASS);
+                        return;
+                    }
+                }
             }
             const bg_picture = document.querySelector("#album_single_" + a);
             if(!(bg_picture.classList.contains(BG_CLICKED_CLASS))){
