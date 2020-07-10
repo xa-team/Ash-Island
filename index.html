@@ -248,18 +248,20 @@
                 obj1_1.style.display = "block";
                 obj2.style.display = "none";
                 list_btn2.style.display = "none";
-                obj3.style.display = "none";
+                // obj3.style.display = "none";
                 list_btn3.style.display = "none";
                 obj4.style.display = "none";
+                Changebg(99);
             }
             else if (objDiv.id == obj2.id) {
                 obj1.style.display = "none";
                 obj1_1.style.display = "none";
                 objDiv.style.display = "block";
                 list_btn2.style.display = "block";
-                obj3.style.display = "none";
+                // obj3.style.display = "none";
                 list_btn3.style.display = "none";
                 obj4.style.display = "none";
+                Changebg(99);
             }
             else if (objDiv.id == obj3.id) {
                 var objthis = document.querySelector("#album_single_1");
@@ -270,15 +272,17 @@
                 list_btn2.style.display = "none";
                 list_btn3.style.display = "block";
                 obj4.style.display = "none";
+                Changebg(98);
             }
             else if (objDiv.id == obj4.id) {
                 obj1.style.display = "none";
                 obj1_1.style.display = "none";
                 obj2.style.display = "none";
                 list_btn2.style.display = "none";
-                obj3.style.display = "none";
+                // obj3.style.display = "none";
                 list_btn3.style.display = "none";
                 objDiv.style.display = "block";
+                Changebg(99);
             }
         }
 
@@ -288,6 +292,19 @@
         const BG_CLICKED_CLASS = "bg_clicked"
 
         function Changebg(a) {
+            if(a == 99){
+                for(var i = 1; i < 7; i++){
+                    var others = document.querySelector("#album_single_" + i);
+                    if(others.classList.contains(BG_CLICKED_CLASS)){
+                        others.classList.remove(BG_CLICKED_CLASS);
+                    }
+                }
+                return;
+            }
+            else if(a == 98){
+                var others = document.querySelector("#album_single_1");
+                others.classList.add(BG_CLICKED_CLASS);
+            }
             const bg_picture = document.querySelector("#album_single_" + a);
             if(!(bg_picture.classList.contains(BG_CLICKED_CLASS))){
                 bg_picture.classList.add(BG_CLICKED_CLASS);
