@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="newstyle.css">
+    <link rel="stylesheet" href="table.css">
+    <link rel="stylesheet" href="buttonstyle.css">
+    <link rel="stylesheet" href="bg.css">
+    <link rel="stylesheet" href="sidebar.css">
+</head>
+
+<body>
+    <div class="main_box">
+        <video muted autoplay loop id="profile_bg" class="animated profile_background fadeIn">
+            <source src="resource/video/background.mp4" type="video/mp4">
+            <strong>Your browser does not support the video tag</strong>
+        </video>
+        <img src="resource/pictures/ASH.jpg" alt="정규앨범 커버" class="animated album_main_ASH fadeIn" id="album_main">
+        <img src="resource/pictures/How R U.jpg" alt="싱글앨범 how r u 커버" class="animated album_single HRU fadeIn" id="album_single">
+        <img src="resource/pictures/T.T.C.jpg" alt="참여곡 T.T.C 커버" class="animated album_single TTC fadeIn" id="others">
+
+        <div class="header container">
+            <div class="btn-group">
+                <a href="#" onclick="SirenFunction('profile_table'); return false;"
+                    style="text-decoration:none; color: #22fcba;">
+                    <div class="btn active">프로필</div>
+                </a>
+                <a href="#" onclick="SirenFunction('album_main'); return false;" 
+                    style="text-decoration:none; color: #22fcba;">
+                    <div class="btn">정규 앨범</div>
+                </a>
+                <a href="#" onclick="SirenFunction('album_single'); return false;"
+                    style="text-decoration:none; color: #22fcba;">  
+                    <div class="btn">싱글 앨범</div>
+                </a>
+                <a href="#" onclick="SirenFunction('others'); return false;"
+                    style="text-decoration:none; color: #22fcba;">
+                    <div class="btn">참여한 곡</div>
+                </a>
+            </div>
+        </div>
+        <div class="text_home btn-home">
+            <button href="#" onclick="window.location.reload();"
+                    class="header" id="hd-btn">ASH</button>
+        </div>
+
+        
+        
+        <div class="table-div ">
+            <table class="profile  animated profile_tableee fadeIn" id="profile_table">
+                <thead>
+                    <th colspan="2" style=" padding: 0px;"><img src="resource/pictures/profile.jpg" width="100%"></th>
+                    <tr>
+                        <td colspan="2">
+                            <h2>ASH ISLAND</h2>
+                        </td>
+                    </tr>
+                </thead>
+                <tr>
+                    <th>이름</th>
+                    <td><strong>윤진영</strong></td>
+                </tr>
+                <tr>
+                    <th>출생</th>
+                    <td>
+                        <p>1999년 8월 11일 (21세)<br>부산광역시</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th>신체</th>
+                    <td>
+                        <p>176cm B형</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th>학력</th>
+                    <td>
+                        <p>부산용인고등학교 졸업</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th>소속 레이블</th>
+                    <td><strong>AMBITION MUSIK</strong></td>
+                </tr>
+                <tr>
+                    <th>소속 크루</th>
+                    <td><strong>PABLO MU2IK, Wayside Town</strong></td>
+                </tr>
+                <tr>
+                    <th>SNS</th>
+                    <td>
+                        <a href="https://www.facebook.com/clloudouble9" target="_blank"><img
+                                src="resource/pictures/facebook.png" width="30" height="30"></a>
+                        <a href="https://www.instagram.com/ash.island/" target="_blank"><img
+                                src="resource/pictures/instagram.jpg" width="30" height="30"></a>
+                        <a href="https://soundcloud.com/ashisland" target="_blank"><img
+                                src="resource/pictures/soundcloud.jpg" width="30" height="30"></a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+
+    <aside>
+        <div class="album_main_sidebar animated fadeIn" id="ams">
+            <button class="btn_content btn_clicked" id="ASH_1" onclick="Changefontcolor('ASH', 1)">Paranoid</button>
+            <button class="btn_content" id="ASH_2" onclick="Changefontcolor('ASH' , 2)">발할라</button>
+            <button class="btn_content" id="ASH_3" onclick="Changefontcolor('ASH' , 3)">DEADSTAR</button>
+            <button class="btn_content" id="ASH_4" onclick="Changefontcolor('ASH', 4)">Forgot U</button>
+            <button class="btn_content" id="ASH_5" onclick="Changefontcolor('ASH', 5)">잠수함</button>
+            <button class="btn_content" id="ASH_6" onclick="Changefontcolor('ASH', 6)">Q Mark</button>
+            <button class="btn_content" id="ASH_7" onclick="Changefontcolor('ASH', 7)">Fall</button>
+        </div>
+        <div class="album_single_sidebar animated fadeIn" id="ass">
+            <button class="btn_content btn_clicked" id="">asdf</button>
+        </div>
+    </aside>
+
+
+    <script>
+        const pathLength = 68 * 2 + 200;
+
+        class BtnGroup {
+            constructor(group) {
+                this.group = group;
+                this.buttons = Array.prototype.slice.call(
+                    this.group.querySelectorAll('.btn'));
+
+                this.svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+                this.svg.setAttribute('viewbox',
+                    `-1 -1 ${160 * this.buttons.length + 2} 42`);
+
+                this.path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+                this.currentPath = 'M -80, 40';
+                this.currentIndex = -1;
+                this.activateIndex(
+                    this.buttons.indexOf(
+                        this.group.querySelector('.active')));
+
+
+                this.group.appendChild(this.svg);
+                this.svg.appendChild(this.path);
+                this.refreshPath();
+                for (const button of this.buttons) {
+                    button.addEventListener('click',
+                        e => this.onClick(e));
+
+                }
+            }
+
+            onClick(e) {
+                const index = this.buttons.indexOf(e.srcElement || e.target);
+                this.activateIndex(index);
+            }
+
+            refreshPath() {
+                this.path.setAttributeNS(null, 'd', this.currentPath);
+                this.path.style.strokeDashoffset = (-this.path.getTotalLength() + pathLength) * 0.9965;
+            }
+
+            center(index) {
+                return index * 160 + 80;
+            }
+
+            removeClass(str) {
+                if (this.buttons[this.currentIndex]) {
+                    this.buttons[this.currentIndex].classList.remove(str);
+                }
+            }
+
+            addClass(str) {
+                if (this.buttons[this.currentIndex]) {
+                    this.buttons[this.currentIndex].classList.add(str);
+                }
+            }
+
+            activateIndex(index) {
+                const lastCenter = this.center(this.currentIndex);
+                const nextCenter = this.center(index);
+                const offset = index < this.currentIndex ? -50 : 50;
+                const curve = index < this.currentIndex ? -30 : 30;
+                this.currentPath += `
+          L ${lastCenter + offset}, 40
+          C ${lastCenter + offset + curve}, 40
+            ${lastCenter + offset + curve},  0
+            ${lastCenter + offset},  0
+          L ${lastCenter - offset},  0
+          C ${lastCenter - offset - curve},  0
+            ${lastCenter - offset - curve}, 40
+            ${lastCenter - offset}, 40
+          L ${nextCenter + offset}, 40
+          C ${nextCenter + offset + curve}, 40
+            ${nextCenter + offset + curve},  0
+            ${nextCenter + offset},  0
+          L ${nextCenter - offset},  0
+          C ${nextCenter - offset - curve},  0
+            ${nextCenter - offset - curve}, 40
+            ${nextCenter - offset}, 40
+          L ${nextCenter}, 40
+        `;
+                this.removeClass('active');
+                this.currentIndex = index;
+                this.addClass('active');
+                this.refreshPath();
+            }
+        }
+        ;
+
+        const groups = Array.prototype.slice.call(document.querySelectorAll('.btn-group'));
+        for (const group of groups) {
+            console.log(new BtnGroup(group));
+        }
+
+
+        function SirenFunction(idMyDiv) {
+            var objDiv = document.getElementById(idMyDiv);
+            var obj1 = document.getElementById("profile_table");
+            var obj1_1 = document.getElementById("profile_bg");
+            var obj2 = document.getElementById("album_main");
+            var obj3 = document.getElementById("album_single");
+            var obj4 = document.getElementById("others");
+            // var list_btn2 = document.getElementsByClassName("album_main_sidebar");
+            var list_btn2 = document.getElementById("ams");
+            // var btn = document.getElementById("btn-jungyue"); 버튼 비활성화 display = none으로 해도 됨.
+            // if (objDiv.style.display == "block") {
+            //     objDiv.style.display = "none"; 
+            // }
+            // else { objDiv.style.display = "block"; }
+
+            if (objDiv.id == obj1.id) {
+                objDiv.style.display = "block";
+                obj1_1.style.display = "block";
+                obj2.style.display = "none";
+                list_btn2.style.display = "none";
+                obj3.style.display = "none";
+                obj4.style.display = "none";
+            }
+            else if (objDiv.id == obj2.id) {
+                obj1.style.display = "none";
+                obj1_1.style.display = "none";
+                objDiv.style.display = "block";
+                list_btn2.style.display = "block";
+                obj3.style.display = "none";
+                obj4.style.display = "none";
+            }
+            else if (objDiv.id == obj3.id) {
+                obj1.style.display = "none";
+                obj1_1.style.display = "none";
+                obj2.style.display = "none";
+                list_btn2.style.display = "none";
+                objDiv.style.display = "block";
+                obj4.style.display = "none";
+            }
+            else if (objDiv.id == obj4.id) {
+                obj1.style.display = "none";
+                obj1_1.style.display = "none";
+                obj2.style.display = "none";
+                list_btn2.style.display = "none";
+                obj3.style.display = "none";
+                objDiv.style.display = "block";
+            }
+        }
+
+
+        const CLICKED_CLASS = "btn_clicked";
+
+        function Changefontcolor(album, a) {
+            const album_title = ("#" + album + "_");
+            const title = document.querySelector("#" + album + "_" + a);
+            if(!(title.classList.contains(CLICKED_CLASS))){
+                title.classList.add(CLICKED_CLASS);
+                for(var i = 1; i < 8; i++){
+                    var others = document.querySelector("#" + album + "_" + i);
+                    if(others.classList.contains(CLICKED_CLASS) && i != a){
+                        others.classList.remove(CLICKED_CLASS);
+                    }
+                }
+            }
+        }
+
+    </script>
+</body>
+
+</html>
