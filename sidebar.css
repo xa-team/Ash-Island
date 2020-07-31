@@ -3,12 +3,15 @@ aside ::-webkit-scrollbar{
 }
 
 .album_main_sidebar{
+    z-index: 10;
     overflow: scroll;
     width: 250px;
+    height: 100%;
     margin-left: 20px;
     position: fixed;
     display: none;
     top: 11%;
+    animation-delay: 0.5s;
 }
 
 #ams{
@@ -16,12 +19,14 @@ aside ::-webkit-scrollbar{
 }
 
 .album_single_sidebar{
+    z-index: 10;
     overflow: scroll;
     width: 250px;
     margin-left: 20px;
     position: fixed;
     display: none;
-    top: 10%;
+    top: 11%;
+    animation-delay: 0.5s;
 }
 
 #ass{

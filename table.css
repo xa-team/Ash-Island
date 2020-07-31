@@ -1,6 +1,6 @@
 .table-div{
 	position: absolute;
-	top: 30%;
+	top: 25%;
 	left: 30%;
 	transition: ease 2s;
 }
@@ -11,6 +11,7 @@
 	display: block;
 }
 table.profile {
+	animation-delay: 0.5s;
 	height: 500px;
 	overflow-y: scroll;
 	border-collapse: collapse;
@@ -41,4 +42,34 @@ table.profile td {
 	padding: 10px;
 	vertical-align: top;
 	border-bottom: 1px solid #ccc;
+}
+
+
+
+table.lyrics{
+	position: fixed;
+	width: 28%;
+	top: 27%;
+	left: 36%;
+	line-height: 1.5;
+	background: linear-gradient(135deg, skyblue, rgb(113, 38, 184));
+	padding: 10px;
+	z-index: 0;
+	border-radius: 30px;
+	font-family: "TmoneyRoundWindExtraBold";
+	text-align: center;
+	overflow-y: scroll;
+	height: 400px;
+	transition: 1s;
+}
+table.lyrics td {
+	padding: 10px;
+	vertical-align: top;
+}
+.table_lyrics ::-webkit-scrollbar{
+	display: none;
+}
+#lyrics_paranoid{
+	display: none;
+	animation-delay: 1.5s;
 }

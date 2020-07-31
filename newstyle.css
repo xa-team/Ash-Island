@@ -25,10 +25,8 @@ video{
  .fadeIn {
 	animation-name: fadeIn;
  }
- .profile_tableee{
-	 animation-delay: 0.5s;
- }
 .header {
+	z-index: 5;
 	border-radius: 45px;
 	cursor: pointer;
 	overflow: hidden;
@@ -40,11 +38,12 @@ video{
 	text-transform: uppercase;
 	font-family: "Cafe24Ohsquare";
 	font-size: 24px;
+	height: auto;
 }
 /* 그냥 버튼 디자인 */
 .main_box{
     overflow: hidden;
-	position: relative;
+	/* position: relative; */
 }
 .text_home{
 	position: absolute;
