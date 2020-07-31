@@ -1,20 +1,59 @@
 table {
     background-color: lightgray;
 }
+th{
+    border: 1px solid;
+}
+tr{
+    border: 1px solid;
+}
 td{
+    border: 2px solid lightsteelblue;
     padding: 3px;
 }
+#contents{
+    width: auto;
+    background-color: lightblue;
+    border: 1px solid black;
+    padding: 2px;
+}
+#contents_td{
+    border: 0px;
+}
 #main{
-    width: 75%;
+    width: 55%;
+    text-align: center;
 }
 #profile{
-    border-collapse: collapse;
+    border: 1px;
+    float: right;
+}
+#profile_td{
+    padding: 3px;
+    text-align: center;
+    background-color: black;
+}
+#single{
+    align-content: center;
 }
 #table_music{
+    border: 3px solid black;
+    text-align: center;
     border-collapse: collapse;
+}
+#side_l{
+    width: 20%;
+    float: left;
+}
+#side_r{
+    width: 25%;
+    float: right;
 }
 #music {
     width: 80%;
     border: 2px;
 }
-hr{width: 90%;}
+hr{
+    width: 90%;
+    border: 1.2px solid black;
+}
