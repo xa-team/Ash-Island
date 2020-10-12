@@ -49,7 +49,7 @@ table.profile td {
 table.lyrics{
 	position: fixed;
 	width: 28%;
-	top: 27%;
+	top: 30%;
 	left: 36%;
 	line-height: 1.5;
 	background: linear-gradient(135deg, skyblue, rgb(113, 38, 184));
