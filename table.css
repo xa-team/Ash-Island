@@ -61,6 +61,7 @@ table.lyrics{
 	overflow-y: scroll;
 	height: 400px;
 	transition: 1s;
+	animation-delay: 1.5s;
 }
 table.lyrics td {
 	padding: 10px;
